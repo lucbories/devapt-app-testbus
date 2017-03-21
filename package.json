@@ -1,0 +1,51 @@
+{
+  "name": "devapt-app-testbus",
+  "version": "1.0.0",
+  "description": "Developpers Application Toolkit - test messages bus application",
+  "author": {
+    "name": "Luc BORIES",
+    "email": "luc.bories@gmail.com",
+    "url": "https://github.com/lucbories"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucbories/devapt-app-testbus.git"
+  },
+  "bugs": {
+    "url": "git+https://github.com/lucbories/devapt-app-testbus/issues"
+  },
+  "homepage": "https://github.com/lucbories/devapt-app-testbus#readme.md",
+  "main": "",
+  "engines": {
+    "node": ">=4.4.4"
+  },
+  "directories": {
+    "dist": "./dist"
+  },
+  "scripts": {
+    "nodeA": "node node_modules/devapt-core-server/dist/js/start_node.js -n NodeA -t dist/resources/world -b node_modules/devapt-core-server/dist/js -s NodeA:NodeALocal8081",
+    "nodeB": "node node_modules/devapt-core-server/dist/js/start_node.js -n NodeB -t dist/resources/world -b node_modules/devapt-core-server/dist/js -s NodeB:NodeBLocal8082",
+    "nodeC": "node node_modules/devapt-core-server/dist/js/start_node.js -n NodeC -t dist/resources/world -b node_modules/devapt-core-server/dist/js -s NodeB:NodeBLocal8083"
+  },
+  "keywords": [
+    "server",
+    "api",
+    "rest",
+    "devapt",
+    "toolkit",
+    "redux",
+    "baconjs",
+    "reactive",
+    "devtools"
+  ],
+  "dependencies": {
+    "devapt-core-common": ">=2.0.0",
+    "devapt-core-server": ">=2.0.0",
+    "devapt-features-queuelibbus": ">=2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "parallelshell": "^2.0.0"
+  }
+}

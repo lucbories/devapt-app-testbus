@@ -1,0 +1,17 @@
+*.log
+*.session
+*.cache
+.settings
+.project
+.buildpath
+npm-debug.log*
+go.cmd
+
+.vscode
+tmp
+node_modules
+bower_components
+
+unused_*
+todo_*
+old_*

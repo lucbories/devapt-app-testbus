@@ -1,0 +1,58 @@
+{
+	"applications":{
+		"assets":{
+			"title":"Assets provider",
+			"url":"assets",
+			"license":"APACHE-LICENSE-2.0",
+			
+			"provided_services":["html_assets_1"],
+			"used_services":[],
+			
+			"used_packages": [],
+			"used_plugins":[],
+			
+			"assets":{
+				"css":[],
+				"js":[],
+				"img":[],
+				"index":""
+			}
+		},
+		
+		"devtools":{
+			"title":"Devtools application",
+			"url":"devtools",
+			"license":"APACHE-LICENSE-2.0",
+
+			"default_view":"metrics_tabs",
+			"default_menubar":"default_menubar",
+			
+			"provided_services":["labs_service", "devtools_store", "devtools_monitor", "devtools_runtime", "devtools_admin", "metrics_http", "metrics_host", "metrics_nodejs", "metrics_bus", "topology", "logs", "messages"],
+			"used_services":[],
+			
+			"used_packages": ["devtools", "labs"],
+			"used_plugins":["Devtools", "Labs", "Foundation6", "Sparklines", "DefaultRendering"],
+			
+			"assets":{
+				"css":[
+				],
+				"js":[
+					{
+						"id":"js-browser",
+						"src":"plugins/Devtools/browser.min.js"
+					},
+					{
+						"id":"js-devapt-browser",
+						"src":"plugins/Devtools/devapt-browser.js"
+					},
+					{
+						"id":"js-devapt-bootstrap",
+						"src":"plugins/Devtools/devapt-bootstrap.js"
+					}
+				],
+				"img":[],
+				"index":""
+			}
+		}
+	}
+}

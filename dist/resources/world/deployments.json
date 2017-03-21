@@ -1,0 +1,41 @@
+{
+	"deployments":{
+		"tenantA":{
+			"assets":{
+				"assets":{},
+				"services":{
+					"html_assets_1": { "servers":["NodeALocal8080"], "filters":["*"] }
+				}
+			},
+			"devtools":{
+				"assets":{
+					"regions":{
+						"all":{
+							"style":["html_assets_1"],
+							"script":["html_assets_1"],
+							"image":["html_assets_1"],
+							"html":["html_assets_1"]
+						}
+					}
+				},
+				"services":{
+					"devtools_store": {
+						"servers":["NodeALocal8080"]
+					},
+					"rest_api_resources_query_1": { "servers":["NodeALocal8080"] },
+					"devtools_monitor": { "servers":["NodeALocal8080"] },
+					"devtools_runtime": { "servers":["NodeALocal8080"] },
+					"devtools_admin": { "servers":["NodeALocal8080"] },
+					"labs_service": { "servers":["NodeALocal8080"] },
+					"metrics_http": { "servers":["NodeALocal8080"] },
+					"metrics_host": { "servers":["NodeALocal8080"] },
+					"metrics_nodejs": { "servers":["NodeALocal8080"] },
+					"metrics_bus": { "servers":["NodeALocal8080"] },
+					"topology": { "servers":["NodeALocal8080"] },
+					"logs": { "servers":["NodeALocal8080"] },
+					"messages": { "servers":["NodeALocal8080"] }
+				}
+			}
+		}
+	}
+}

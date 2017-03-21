@@ -1,0 +1,64 @@
+{
+	"is_master":true,
+	"name":"NodeA",
+	
+	"master":{
+		"name":"NodeA",
+		
+		"msg_bus":{
+			"package":"devapt-features-queuelibbus",
+			"type":"Server",
+			"host":"localhost",
+			"port":5000
+		},
+		"logs_bus":{
+			"package":"devapt-features-queuelibbus",
+			"type":"Server",
+			"host":"localhost",
+			"port":5001
+		},
+		"metrics_bus":{
+			"package":"devapt-features-queuelibbus",
+			"type":"Server",
+			"host":"localhost",
+			"port":5002
+		}
+	},
+	
+	"base_dir": "",
+	
+	"settings_provider": {
+		"source":"local_file",
+		"relative_path":"world.json"
+	},
+	
+	"trace": {
+		"stages":{
+			"enabled":false,
+			
+			"RuntimeStage0":{
+				"enabled":false
+			},
+			
+			"RuntimeStage1":{
+				"enabled":false
+			},
+			
+			"RuntimeStage2":{
+				"enabled":false
+			},
+			
+			"RuntimeStage3":{
+				"enabled":false
+			},
+			
+			"RuntimeStage4":{
+				"enabled":false
+			},
+			
+			"RuntimeStage5":{
+				"enabled":false
+			}
+		}
+	}
+}
