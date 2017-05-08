@@ -6,26 +6,24 @@
 		"name":"NodeA",
 		
 		"msg_bus":{
-			"package":"devapt-features-queuelibbus",
+			"package":"default",
 			"type":"Server",
 			"host":"localhost",
 			"port":5000
 		},
 		"logs_bus":{
-			"package":"devapt-features-queuelibbus",
+			"package":"default",
 			"type":"Server",
 			"host":"localhost",
 			"port":5001
 		},
 		"metrics_bus":{
-			"package":"devapt-features-queuelibbus",
+			"package":"default",
 			"type":"Server",
 			"host":"localhost",
 			"port":5002
 		}
 	},
-	
-	"base_dir": "",
 	
 	"settings_provider": {
 		"source":"local_file",
@@ -34,7 +32,7 @@
 	
 	"trace": {
 		"stages":{
-			"enabled":false,
+			"enabled":true,
 			
 			"RuntimeStage0":{
 				"enabled":false
@@ -49,14 +47,6 @@
 			},
 			
 			"RuntimeStage3":{
-				"enabled":false
-			},
-			
-			"RuntimeStage4":{
-				"enabled":false
-			},
-			
-			"RuntimeStage5":{
 				"enabled":false
 			}
 		}

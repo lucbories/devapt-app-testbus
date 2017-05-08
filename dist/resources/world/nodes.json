@@ -14,7 +14,7 @@
 					"security": {
 						"authentication": {
 							"enabled":false,
-							"plugins":["file_users"]
+							"plugins":[]
 						}
 					}
 				}
@@ -33,8 +33,8 @@
 					
 					"security": {
 						"authentication": {
-							"enabled":true,
-							"plugins":["file_users"]
+							"enabled":false,
+							"plugins":[]
 						}
 					}
 				}
@@ -53,8 +53,8 @@
 					
 					"security": {
 						"authentication": {
-							"enabled":true,
-							"plugins":["file_users"]
+							"enabled":false,
+							"plugins":[]
 						}
 					}
 				}

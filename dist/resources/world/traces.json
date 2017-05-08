@@ -5,26 +5,15 @@
 		},
 		
 		"classes":{
-			"TopologyDefine*":false,
-			"TopologyDefineTenant":false,
-			"TopologyDefinePackage":false,
-			"TopologyDefineMenubar":false,
-			"TopologyDefineApplication":false,
-			"TopologyDefineCommand":false,
-			".*Service":false,
-			".*Authentication.*":false,
-			".*Authorization.*":false,
-			"Security":false,
-			".*Provider":false,
-			"ClientRuntime":false,
-			"UI":true,
-			"Router":true,
-			"Component":false,
+			"MetricsServer":true,
+			"Node":false,
 			".*":false
 		},
 		
 		"instances":{
-			".*":false
+			"metrics_server":false,
+			"send_metrics":false,
+			".*":true
 		}
 	}
 }

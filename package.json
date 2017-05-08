@@ -45,6 +45,7 @@
     "devapt-features-queuelibbus": ">=2.0.0"
   },
   "devDependencies": {
+    "del": ">=2.2.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "parallelshell": "^2.0.0"
   }

@@ -1,48 +1,54 @@
 {
 	"packages":{
-		"app":{
+		"testbus":{
 			"base_dir":".",
 			"resources":[],
 			"templates":[],
 			"includes":[],
 			"commands":[],
-			"services":"services.json"
-		},
-		"devtools":{
-			"base_dir":"../../../../devapt-devtools/dist/resources/devtools",
-			"resources":[
-				"ui_menubars.json",
-				"ui_messages.json",
-				"ui_logs.json",
-				"ui_metrics.json",
-				"ui_topology.json",
-				"ui_runtime.json",
-				"ui_resources.json"
-			],
-			"templates":[],
-			"includes":[],
-			"commands":"devtools_commands.json",
-			"services":"devtools_services.json"
-		},
+			"services":{
+				"topology":{
+					"type":"topology_svc"
+				},
+				"pingpong":{
+					"type":"ping_svc"
+				},
+				"logs":{
+					"type":"logs_svc"
+				},
+				"html_assets":{
+					"type":"html_assets_svc",
+					"routes":[
+						{
+							"is_global":true,
+							"route":"/|/.*.html",
+							"directory":"D:/DATAS/GitHub/devapt-app-testbus/public/assets/html",
+							"default":"index.html"
+						},
 
-		"labs":{
-			"base_dir":"../../../../devapt-features-labs/src/resources",
-			"resources":[
-				"labs_ui.json"
-			],
-			"templates":["labs_plot_features.json", "labs_terminal_features.json"],
-			"includes":[],
-			"commands":"labs_commands.json",
-			"services":"labs_services.json"
-		},
-		
-		"security":{
-			"base_dir":"security",
-			"resources":[
-			],
-			"templates":[],
-			"includes":[],
-			"services":{}
+						{
+							"route":"/",
+							"directory":"D:/DATAS/GitHub/devapt-app-testbus/public/assets/",
+							"required_prefixes":[],
+							"required_suffixes":[".js", ".js.map", ".css", ".html", ".png", ".jpg"]
+						}
+					],
+					"security":{
+						"enabled":false,
+						"authentication":{
+							"enabled":false,
+							"engines":[]
+						},
+						"authorization":{
+							"enabled":false,
+							"engines":[],
+							"permissions":{
+								"*":["*"]
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
