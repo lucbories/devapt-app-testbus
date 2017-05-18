@@ -1,0 +1,167 @@
+
+<html>
+
+<head>
+	<meta charSet="utf8"/>
+	<title>Devapt TestBus Home/PingPong</title>
+	
+	<link rel="icon" type="image/png" href="/assets/img/favico.png"/>
+
+	<link type='text/css'  rel="stylesheet" href="/assets/css/normalize.css" media="all" />
+
+	<style type='text/css'>
+		body {
+			margin: 0; /* pour éviter les marges */
+		}
+		#content {
+			min-width:400px;
+			min-height:300px;
+			width:80%;
+			height:80%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		#id_out_ping_master,#id_out_ping_node_a,#id_out_ping_node_b,#id_out_ping_node_c {
+			min-width:300px;
+			min-height:200px;
+		}
+		#logs {
+			max-height:30%;
+		}
+		#logs tbody {
+			max-height:30%;
+			/*height:25%;
+			overflow-y: ;
+			overflow-x: hidden;*/
+		}
+		#logs.table.tbody.td {
+			padding: 5px;
+		}
+
+		table {
+			margin-bottom:20px;
+		}
+
+		td {
+			padding:5px;
+		}
+	</style>
+</head>
+
+
+<body>
+
+<header>
+	<center>
+		<h1>TestBus</h1>
+		<h8><a href="/assets/html/index.html">Home</a></h8>
+	</center>
+</header>
+
+<hr>
+
+<script>window.__INITIAL_STATE__ = {
+	"credentials":{
+		"tenant":"tenantA",
+		"env":"dev",
+		"application":"testbus",
+
+		"token":"",
+		"user_name":"",
+		"user_pass_digest":"",
+		
+		"ts_login":0,
+		"ts_expiration":0,
+
+		"errors_count":0,
+		"renew_count":0,
+
+		"hash":undefined
+	},
+	"commands":{}
+}
+</script>
+
+
+<div id="content">
+	<center>
+		<!-- PING -->
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<button id="id_button_ping_master" onclick="fn_ping_master()">Ping master</button>
+					</td>
+					<td>
+						<button id="id_button_ping_node_a" onclick="fn_ping_node_a()">Ping Node A</button>
+					</td>
+					<td>
+						<button id="id_button_ping_node_b" onclick="fn_ping_node_b()">Ping Node B</button>
+					</td>
+					<td>
+						<button id="id_button_ping_node_c" onclick="fn_ping_node_c()">Ping Node C</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<textarea id="id_out_ping_master" readonly="true"></textarea>
+					</td>
+					<td>
+						<textarea id="id_out_ping_node_a" readonly="true"></textarea>
+					</td>
+					<td>
+						<textarea id="id_out_ping_node_b" readonly="true"></textarea>
+					</td>
+					<td>
+						<textarea id="id_out_ping_node_c" readonly="true"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<!-- LOGS -->
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<button id="id_button_enable_logs" onclick="fn_enable_logs()">Start logs</button>
+					</td>
+					<td>
+						<button id="id_button_disable_logs" onclick="fn_disable_logs()">Stop logs</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table id="logs">
+			<thead>
+				<tr>
+					<td>Timestamp</td>
+					<td>Level</td>
+					<td>Type</td>
+					<td>Context</td>
+					<td>Source</td>
+					<td>Log</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</center>
+</div>
+
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/assets/js/vendor/browser.min.js"></script>
+<script type="text/javascript" src="/assets/js/devapt-core-browser.js"></script>
+<script type="text/javascript" src="/assets/js/devapt-bootstrap.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript" src="/assets/js/pinpong.js"></script>
+<script type="text/javascript" src="/assets/js/logs.js"></script>
+
+
+</body>
+
+
+</html>

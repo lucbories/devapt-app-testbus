@@ -7,7 +7,10 @@
 					"topology":{ "servers":["NodeALocal8080"], "filters":["*"] },
 					"html_assets":{ "servers":["NodeALocal8080"], "filters":["*"] },
 					"pingpong":{ "servers":["NodeALocal8080"], "filters":["*"] },
-					"logs":{ "servers":["NodeALocal8080"], "filters":["*"] }
+					"logs":{ "servers":["NodeALocal8080"], "filters":["*"] },
+					"messaging":{ "servers":["NodeALocal8080"], "filters":["*"] },
+					"metrics_bus":{ "servers":["NodeALocal8080"], "filters":["*"] },
+					"resources":{ "servers":["NodeALocal8080"], "filters":["*"] }
 				}
 			}
 		}

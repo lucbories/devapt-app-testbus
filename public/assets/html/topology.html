@@ -1,0 +1,178 @@
+
+<html>
+
+<head>
+	<meta charSet="utf8"/>
+	<title>Devapt TestBus Home/Topology</title>
+	
+	<link rel="icon" type="image/png" href="/assets/img/favico.png"/>
+
+	<link type='text/css'  rel="stylesheet" href="/assets/css/normalize.css" media="all" />
+
+	<style type='text/css'>
+		body {
+			margin: 0; /* pour éviter les marges */
+		}
+		#content {
+			min-width:400px;
+			min-height:300px;
+			width:80%;
+			height:80%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		textarea {
+			min-width:300px;
+			min-height:200px;
+		}
+		#logs {
+			max-height:30%;
+		}
+		#logs.table.tbody.td {
+			padding: 5px;
+		}
+
+		table {
+			margin-bottom:20px;
+		}
+
+		td {
+			padding:5px;
+		}
+	</style>
+</head>
+
+
+<body>
+
+<header>
+	<center>
+		<h1>TestBus</h1>
+		<h8><a href="/assets/html/index.html">Home</a></h8>
+	</center>
+</header>
+
+<hr>
+
+<script>window.__INITIAL_STATE__ = {
+	"credentials":{
+		"tenant":"tenantA",
+		"env":"dev",
+		"application":"testbus",
+
+		"token":"",
+		"user_name":"",
+		"user_pass_digest":"",
+		
+		"ts_login":0,
+		"ts_expiration":0,
+
+		"errors_count":0,
+		"renew_count":0,
+
+		"hash":undefined
+	},
+	"commands":{}
+}
+</script>
+
+
+<div id="content">
+	<center>
+
+		<!-- TOPOLOGY -->
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<button id="id_button_topology_tenants_names" onclick="fn_topology_tenants_names()">Topology tenants names</button>
+					</td>
+					<td>
+						<button id="id_button_topology_tenants_infos" onclick="fn_topology_tenants_infos()">Topology tenants infos</button>
+					</td>
+					<td>
+						<button id="id_button_topology_tenant_infos" onclick="fn_topology_tenant_infos('tenantA')">Topology infos for tenantA</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<textarea id="id_out_topology_tenants_names" readonly="true"></textarea>
+					</td>
+					<td>
+						<textarea id="id_out_topology_tenants_infos" readonly="true"></textarea>
+					</td>
+					<td>
+						<textarea id="id_out_topology_tenantA_infos" readonly="true"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button id="id_button_topology_services_names" onclick="fn_topology_services_names('tenantA')">Topology services names</button>
+					</td>
+					<td>
+						<button id="id_button_topology_services_infos" onclick="fn_topology_services_infos('tenantA')">Topology services infos</button>
+					</td>
+					<td>
+						<button id="id_button_topology_service1_infos" onclick="fn_topology_service_infos('tenantA', 'pingpong')">Topology infos for service PingPong</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<textarea id="id_out_topology_services_names" readonly="true"></textarea>
+					</td>
+					<td>
+						<textarea id="id_out_topology_services_infos" readonly="true"></textarea>
+					</td>
+					<td>
+						<textarea id="id_out_topology_service1_infos" readonly="true"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<!-- LOGS -->
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<button id="id_button_enable_logs" onclick="fn_enable_logs()">Start logs</button>
+					</td>
+					<td>
+						<button id="id_button_disable_logs" onclick="fn_disable_logs()">Stop logs</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table id="logs">
+			<thead>
+				<tr>
+					<td>Timestamp</td>
+					<td>Level</td>
+					<td>Type</td>
+					<td>Context</td>
+					<td>Source</td>
+					<td>Log</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</center>
+</div>
+
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/assets/js/vendor/browser.min.js"></script>
+<script type="text/javascript" src="/assets/js/devapt-core-browser.js"></script>
+<script type="text/javascript" src="/assets/js/devapt-bootstrap.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript" src="/assets/js/topology.js"></script>
+<script type="text/javascript" src="/assets/js/logs.js"></script>
+
+
+</body>
+
+
+</html>

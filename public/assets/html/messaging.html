@@ -1,0 +1,186 @@
+
+<html>
+
+<head>
+	<meta charSet="utf8"/>
+	<title>Devapt TestBus Home</title>
+	
+	<link rel="icon" type="image/png" href="/assets/img/favico.png"/>
+
+	<link type='text/css'  rel="stylesheet" href="/assets/css/normalize.css" media="all" />
+
+	<style type='text/css'>
+		body {
+			margin: 0; /* pour éviter les marges */
+		}
+		#content {
+			min-width:400px;
+			min-height:300px;
+			width:80%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		#logs {
+			max-height:30%;
+		}
+		#logs.table.tbody.td {
+			padding: 5px;
+		}
+
+		table {
+			margin-bottom:20px;
+		}
+
+		td {
+			padding:5px;
+		}
+
+		#id_bus_response, #id_bus_payload {
+			min-width: 300px;
+			min-height: 150px;
+		}
+	</style>
+</head>
+
+
+<body>
+
+<header>
+	<center>
+		<h1>TestBus / Messaging</h1>
+		<h8><a href="/assets/html/index.html">Home</a></h8>
+		<h8 id="id_session_uid"><h8>
+	</center>
+</header>
+
+<hr>
+
+<script>window.__INITIAL_STATE__ = {
+	"credentials":{
+		"tenant":"tenantA",
+		"env":"dev",
+		"application":"testbus",
+
+		"token":"",
+		"user_name":"",
+		"user_pass_digest":"",
+		
+		"ts_login":0,
+		"ts_expiration":0,
+
+		"errors_count":0,
+		"renew_count":0,
+
+		"hash":undefined
+	},
+	"commands":{}
+}
+</script>
+
+
+
+<div id="content">
+	<center>
+		
+		<hr>
+
+		<!-- BUSES -->
+		<p>BUSES</p>
+
+		<select id="id_buses" onchange="fn_buses_select()">
+		</select>
+		<button id="id_buses_update" onclick="fn_buses_update()">Update</button></td>
+		<input id="id_bus_name" type="text"></input>
+
+		<hr>
+
+		<p>CHANNELS</p>
+		<select id="id_bus_channels" onchange="fn_bus_channels_select()">
+		</select>
+		<input id="id_bus_channel" type="text"></input>
+
+		<hr>
+
+		<p>RECIPIENTS</p>
+		<select id="id_bus_recipients" onchange="fn_bus_recipients_select()">
+		</select>
+		<input id="id_bus_recipient" type="text"></input>
+
+		<hr>
+
+		<p>SEND</p>
+		<p>Payload</p>
+		<select id="id_bus_payload_templates" onchange="fn_bus_payload_templates_select()">
+			<option>Default</option>
+			<option>Logs</option>
+		</select>
+		<textarea id="id_bus_payload"></textarea>
+		<button id="id_bus_send" onclick="fn_bus_send()">Send</button></td>
+
+		<hr>
+
+		<p>RESPONSE</p>
+		<textarea id="id_bus_response" readonly></textarea>
+
+		<hr>
+
+		<!-- MESSAGES -->
+		<table id="id_messages">
+			<thead>
+				<tr>
+					<td style="min-width:100px;">Bus</td>
+					<td style="min-width:100px;">Channel</td>
+					<td style="min-width:100px;">Sender</td>
+					<td style="min-width:150px;">Payload</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<!-- LOGS -->
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<button id="id_button_enable_logs" onclick="fn_enable_logs()">Start logs</button>
+					</td>
+					<td>
+						<button id="id_button_disable_logs" onclick="fn_disable_logs()">Stop logs</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table id="id_logs">
+			<thead>
+				<tr>
+					<td style="min-width:100px;">Timestamp</td>
+					<td style="min-width:100px;">Level</td>
+					<td style="min-width:100px;">Type</td>
+					<td style="min-width:150px;">Context</td>
+					<td style="min-width:150px;">Source</td>
+					<td style="min-width:250px;">Log</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</center>
+</div>
+
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/assets/js/vendor/browser.min.js"></script>
+<script type="text/javascript" src="/assets/js/devapt-core-browser.js"></script>
+<script type="text/javascript" src="/assets/js/devapt-bootstrap.js"></script>
+<script type="text/javascript" src="/assets/js/app.js"></script>
+<script type="text/javascript" src="/assets/js/messaging.js"></script>
+<script type="text/javascript" src="/assets/js/logs.js"></script>
+
+
+</body>
+
+
+</html>

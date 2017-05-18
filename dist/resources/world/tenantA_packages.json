@@ -7,6 +7,15 @@
 			"includes":[],
 			"commands":[],
 			"services":{
+				"metrics_bus":{
+					"type":"metrics_bus_svc"
+				},
+				"resources":{
+					"type":"resources_svc"
+				},
+				"messaging":{
+					"type":"messages_svc"
+				},
 				"topology":{
 					"type":"topology_svc"
 				},

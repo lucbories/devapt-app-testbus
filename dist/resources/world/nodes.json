@@ -17,6 +17,20 @@
 							"plugins":[]
 						}
 					}
+				},
+				"NodeALocalLogs":{
+					"type":"logs",
+					"port":"N/A",
+					"protocole":"bus",
+					"middlewares":[],
+					"use_socketio":false,
+					
+					"security": {
+						"authentication": {
+							"enabled":false,
+							"plugins":[]
+						}
+					}
 				}
 			}
 		},
