@@ -4,12 +4,13 @@
 			"assets":{
 				"assets":{},
 				"services":{
-					"topology":{ "servers":["NodeALocal8080"], "filters":["*"] },
-					"html_assets":{ "servers":["NodeALocal8080"], "filters":["*"] },
-					"pingpong":{ "servers":["NodeALocal8080"], "filters":["*"] },
+					"topology":{ "servers":["NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
+					"html_assets":{ "servers":["NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
+					"pingpong":{ "servers":["NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
 					"logs":{ "servers":["NodeALocal8080"], "filters":["*"] },
-					"messaging":{ "servers":["NodeALocal8080"], "filters":["*"] },
-					"metrics_bus":{ "servers":["NodeALocal8080"], "filters":["*"] },
+					"messaging":{ "servers":["NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
+					"metrics":{ "servers":["NodeALocal8080"], "filters":["*"] },
+					"middlewares":{ "servers":["NodeALocal8080"], "filters":["*"] },
 					"resources":{ "servers":["NodeALocal8080"], "filters":["*"] }
 				}
 			}

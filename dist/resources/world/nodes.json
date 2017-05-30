@@ -40,10 +40,11 @@
 			"is_master":false,
 			"servers":{
 				"NodeBLocal7080":{
-					"type":"restify",
+					"type":"express",
 					"port":7080,
 					"protocole":"http",
 					"middlewares":[],
+					"use_socketio":true,
 					
 					"security": {
 						"authentication": {
@@ -60,10 +61,11 @@
 			"is_master":false,
 			"servers":{
 				"NodeCLocal6080":{
-					"type":"restify",
+					"type":"express",
 					"port":6080,
 					"protocole":"http",
 					"middlewares":[],
+					"use_socketio":true,
 					
 					"security": {
 						"authentication": {

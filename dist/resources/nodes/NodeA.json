@@ -6,19 +6,22 @@
 		"name":"NodeA",
 		
 		"msg_bus":{
-			"package":"default",
+			"package":"socketio",
+			"protocole":"ws",
 			"type":"Server",
 			"host":"localhost",
 			"port":5000
 		},
 		"logs_bus":{
-			"package":"default",
+			"package":"socketio",
+			"protocole":"ws",
 			"type":"Server",
 			"host":"localhost",
 			"port":5001
 		},
 		"metrics_bus":{
-			"package":"default",
+			"package":"socketio",
+			"protocole":"ws",
 			"type":"Server",
 			"host":"localhost",
 			"port":5002

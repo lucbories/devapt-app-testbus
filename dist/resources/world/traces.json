@@ -1,19 +1,22 @@
 {
 	"traces":{
 		"modules":{
+			"queuelibbus.*":true,
 			".*":false
 		},
 		
 		"classes":{
-			"MetricsServer":false,
-			"Node":false,
+			"BusEngine":true,
+			"MessageBus":true,
+			"Node":true,
+			"ServiceProvider":true,
 			".*":false
 		},
 		
 		"instances":{
 			"metrics_server":false,
 			"send_metrics":false,
-			".*":true
+			".*":false
 		}
 	}
 }

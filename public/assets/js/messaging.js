@@ -19,6 +19,8 @@ var bus_payload_elem = document.getElementById('id_bus_payload')
 
 function fn_buses_clear()
 {
+	console.log('fn_buses_clear')
+
 	while(buses_elem.firstChild)
 	{
 		buses_elem.removeChild(buses_elem.firstChild)
@@ -30,6 +32,10 @@ function fn_buses_clear()
 
 function fn_buses_update()
 {
+	console.log('fn_buses_update')
+
+	fn_buses_clear()
+	
 	const msg_svc_promise = devapt_get_service('messaging')
 	devapt_request_service(msg_svc_promise, 'devapt-msg-describe', undefined,
 		function(response)

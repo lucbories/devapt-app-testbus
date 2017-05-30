@@ -7,8 +7,11 @@
 			"includes":[],
 			"commands":[],
 			"services":{
-				"metrics_bus":{
-					"type":"metrics_bus_svc"
+				"middlewares":{
+					"type":"middlewares_svc"
+				},
+				"metrics":{
+					"type":"metrics_svc"
 				},
 				"resources":{
 					"type":"resources_svc"

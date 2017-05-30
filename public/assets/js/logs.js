@@ -9,13 +9,23 @@ function get_out_log(arg_id)
 	{
 		console.log('call:fn_out_log:id=' + arg_id, arg_response)
 
-		// GET LOGS
-		if (! arg_response || ! arg_response.datas || ! arg_response.datas.logs )
+		// CHECK RESPONSE
+		if (! arg_response || ! arg_response.results )
 		{
-			console.error('Logs out element bad response object', arg_response)
+			console.error('Logs out element: bad response object', arg_response)
 			return
 		}
-		var datas = arg_response.datas
+		// CHECK RESPONSE RESULTS
+		if ( arg_response.results.length == 0 )
+		{
+			return
+		}
+		if ( arg_response.results.length < 2 || arg_response.results[0] != 'done' )
+		{
+			console.error('Logs out element: bad response results, should be ["done", [logs_records] ]', arg_response.results)
+			return
+		}
+		var logs_records = arg_response.results[1]
 
 		// GET TABLE
 		var logs_element = document.getElementById(arg_id)
@@ -32,7 +42,7 @@ function get_out_log(arg_id)
 		}
 
 		// LOOP ON LOGS
-		datas.logs.forEach(
+		logs_records.forEach(
 			function(log_record)
 			{
 				var row_element = logs_tbody_element.insertRow(0)
@@ -41,10 +51,10 @@ function get_out_log(arg_id)
 				ts_element.innerHTML = log_record[0]
 
 				var level_element = row_element.insertCell(1)
-				level_element.innerHTML = datas.level
+				level_element.innerHTML = logs_records.level
 
 				var type_element = row_element.insertCell(2)
-				type_element.innerHTML = datas.source
+				type_element.innerHTML = logs_records.source
 
 				var context_element = row_element.insertCell(3)
 				context_element.innerHTML = log_record[1]
@@ -86,7 +96,7 @@ function fn_disable_logs()
 	logs_svc_promise.then(
 		function(svc)
 		{
-			svc['post'].unsubscribes.forEach(
+			svc['devapt-subscribe'].unsubscribes.forEach(
 				function(unsubscribe)
 				{
 					unsubscribe()
