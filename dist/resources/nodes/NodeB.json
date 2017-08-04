@@ -37,30 +37,30 @@
 	
 	"trace": {
 		"stages":{
-			"enabled":true,
+			"enabled":false,
 			
 			"RuntimeStage0":{
-				"enabled":true
+				"enabled":false
 			},
 			
 			"RuntimeStage1":{
-				"enabled":true
+				"enabled":false
 			},
 			
 			"RuntimeStage2":{
-				"enabled":true
+				"enabled":false
 			},
 			
 			"RuntimeStage3":{
-				"enabled":true
+				"enabled":false
 			},
 			
 			"RuntimeStage4":{
-				"enabled":true
+				"enabled":false
 			},
 			
 			"RuntimeStage5":{
-				"enabled":true
+				"enabled":false
 			}
 		}
 	}

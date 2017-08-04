@@ -25,7 +25,8 @@ function get_out_log(arg_id)
 			console.error('Logs out element: bad response results, should be ["done", [logs_records] ]', arg_response.results)
 			return
 		}
-		var logs_records = arg_response.results[1]
+		var logs_objects = arg_response.results[1]
+		logs_objects = Array.isArray(logs_objects) ? logs_objects : [logs_objects]
 
 		// GET TABLE
 		var logs_element = document.getElementById(arg_id)
@@ -42,28 +43,33 @@ function get_out_log(arg_id)
 		}
 
 		// LOOP ON LOGS
-		logs_records.forEach(
-			function(log_record)
+		logs_objects.forEach(
+			function(logs_object)
 			{
-				var row_element = logs_tbody_element.insertRow(0)
+				logs_object.logs.forEach(
+					function(log_record)
+					{
+						var row_element = logs_tbody_element.insertRow(0)
 
-				var ts_element = row_element.insertCell(0)
-				ts_element.innerHTML = log_record[0]
+						var ts_element = row_element.insertCell(0)
+						ts_element.innerHTML = log_record[0]
 
-				var level_element = row_element.insertCell(1)
-				level_element.innerHTML = logs_records.level
+						var level_element = row_element.insertCell(1)
+						level_element.innerHTML = logs_object.level
 
-				var type_element = row_element.insertCell(2)
-				type_element.innerHTML = logs_records.source
+						var type_element = row_element.insertCell(2)
+						type_element.innerHTML = logs_object.source
 
-				var context_element = row_element.insertCell(3)
-				context_element.innerHTML = log_record[1]
+						var context_element = row_element.insertCell(3)
+						context_element.innerHTML = log_record[1]
 
-				var source_element = row_element.insertCell(4)
-				source_element.innerHTML = log_record[2]
+						var source_element = row_element.insertCell(4)
+						source_element.innerHTML = log_record[2]
 
-				var log_element = row_element.insertCell(5)
-				log_element.innerHTML = log_record[5]
+						var log_element = row_element.insertCell(5)
+						log_element.innerHTML = log_record[5]
+					}
+				)
 			}
 		)
 	}

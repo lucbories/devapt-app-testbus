@@ -13,7 +13,10 @@ function get_out_ping(arg_target, arg_id, arg_label)
 			}
 			if (arg_response.results[1] != arg_target)
 			{
-				return
+				if (arg_target != 'master')
+				{
+					return
+				}
 			}
 		}
 
@@ -30,36 +33,46 @@ function get_out_ping(arg_target, arg_id, arg_label)
 }
 
 
-function fn_ping(arg_target)
+function fn_ping(arg_target, arg_out_id)
 {
 	// console.log('call:fn_ping')
-	get_out_ping(arg_target, 'id_out_ping_' + arg_target, 'Ping emitted')()
+	get_out_ping(arg_target, arg_out_id, 'Ping emitted')()
 	var ping_svc_promise = devapt_get_service('pingpong', ping_svc_cfg)
-	devapt_request_service(ping_svc_promise, 'devapt-ping', arg_target, get_out_ping(arg_target, 'id_out_ping_' + arg_target, 'Pong received'))
+	devapt_request_service(ping_svc_promise, 'devapt-ping', arg_target, get_out_ping(arg_target, arg_out_id, 'Pong received'))
 }
 
 
 function fn_ping_master()
 {
-	fn_ping('master')
+	fn_ping('master', 'id_out_ping_master')
 }
 
 
 function fn_ping_node_a()
 {
-	fn_ping('NodeA')
+	fn_ping('NodeA', 'id_out_ping_NodeA')
 }
 
 
 function fn_ping_node_b()
 {
-	fn_ping('NodeB')
+	fn_ping('NodeB', 'id_out_ping_NodeB')
 }
 
 
 function fn_ping_node_c()
 {
-	fn_ping('NodeC')
+	fn_ping('NodeC', 'id_out_ping_NodeC')
+}
+
+
+function fn_ping_custom()
+{
+	var recipient = document.getElementById('id_input_ping_custom')
+	if (recipient.value && recipient.value.length > 0)
+	{
+		fn_ping(recipient.value, 'id_out_ping_custom')
+	}
 }
 
 

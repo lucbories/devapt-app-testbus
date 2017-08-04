@@ -1,15 +1,14 @@
 {
 	"traces":{
 		"modules":{
-			"queuelibbus.*":true,
 			".*":false
 		},
 		
 		"classes":{
-			"BusEngine":true,
-			"MessageBus":true,
-			"Node":true,
-			"ServiceProvider":true,
+			"BusEngine":false,
+			"MessageBus":false,
+			"Node":false,
+			"ServiceProvider":false,
 			".*":false
 		},
 		

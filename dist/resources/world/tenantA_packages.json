@@ -1,7 +1,7 @@
 {
 	"packages":{
 		"testbus":{
-			"base_dir":".",
+			"base_dir":null,
 			"resources":[],
 			"templates":[],
 			"includes":[],
@@ -34,13 +34,13 @@
 						{
 							"is_global":true,
 							"route":"/|/.*.html",
-							"directory":"D:/DATAS/GitHub/devapt-app-testbus/public/assets/html",
+							"directory":"../../public/assets/html",
 							"default":"index.html"
 						},
 
 						{
 							"route":"/",
-							"directory":"D:/DATAS/GitHub/devapt-app-testbus/public/assets/",
+							"directory":"../../public/assets/",
 							"required_prefixes":[],
 							"required_suffixes":[".js", ".js.map", ".css", ".html", ".png", ".jpg"]
 						}

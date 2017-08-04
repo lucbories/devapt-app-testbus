@@ -21,7 +21,7 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-		#id_out_ping_master,#id_out_ping_NodeA,#id_out_ping_NodeB,#id_out_ping_NodeC {
+		#id_out_ping_master,#id_out_ping_NodeA,#id_out_ping_NodeB,#id_out_ping_NodeC,#id_out_ping_custom {
 			min-width:300px;
 			min-height:200px;
 		}
@@ -102,6 +102,10 @@
 					<td>
 						<button id="id_button_ping_node_c" onclick="fn_ping_node_c()">Ping Node C</button>
 					</td>
+					<td>
+						<input id="id_input_ping_custom" type="text"></input>
+						<button id="id_button_ping_custom" onclick="fn_ping_custom()">Ping Custom</button>
+					</td>
 				</tr>
 				<tr>
 					<td>
@@ -115,6 +119,9 @@
 					</td>
 					<td>
 						<textarea id="id_out_ping_NodeC" readonly="true"></textarea>
+					</td>
+					<td>
+						<textarea id="id_out_ping_custom" readonly="true"></textarea>
 					</td>
 				</tr>
 			</tbody>

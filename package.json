@@ -1,7 +1,7 @@
 {
   "name": "devapt-app-testbus",
   "version": "1.0.0",
-  "description": "Developpers Application Toolkit - test messages bus application",
+  "description": "Developpers Application Toolkit - messages bus testing application",
   "author": {
     "name": "Luc BORIES",
     "email": "luc.bories@gmail.com",
@@ -40,9 +40,10 @@
     "devtools"
   ],
   "dependencies": {
+    "devapt-core-browser": ">=2.0.0",
     "devapt-core-common": ">=2.0.0",
     "devapt-core-server": ">=2.0.0",
-    "devapt-features-queuelibbus": ">=2.0.0"
+    "devapt-core-services": ">=2.0.0"
   },
   "devDependencies": {
     "del": ">=2.2.0",
