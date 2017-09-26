@@ -1,5 +1,40 @@
 {
 	"nodes":{
+		"NodeAOpenshift":{
+			"host":"testbus-lbo.rhcloud.com",
+			"is_master":true,
+			"servers":{
+				"NodeAOpenshift80":{
+					"type":"express",
+					"port":80,
+					"protocole":"http",
+					"middlewares":[],
+					"use_socketio":true,
+					
+					"security": {
+						"authentication": {
+							"enabled":false,
+							"plugins":[]
+						}
+					}
+				},
+				"NodeAOpenshiftLogs":{
+					"type":"logs",
+					"port":"N/A",
+					"protocole":"bus",
+					"middlewares":[],
+					"use_socketio":false,
+					
+					"security": {
+						"authentication": {
+							"enabled":false,
+							"plugins":[]
+						}
+					}
+				}
+			}
+		},
+
 		"NodeA":{
 			"host":"localhost",
 			"is_master":true,

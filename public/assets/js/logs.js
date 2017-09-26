@@ -88,7 +88,7 @@ function fn_enable_logs()
 
 	var logs_svc_promise = devapt_get_service('logs', logs_svc_cfg)
 	devapt_request_service(logs_svc_promise, 'devapt-subscribe', undefined)
-	devapt_subscribe_service(logs_svc_promise, undefined, get_out_log('logs') )
+	devapt_subscribe_service(logs_svc_promise, undefined, get_out_log('id_logs') )
 }
 
 function fn_disable_logs()
@@ -102,12 +102,15 @@ function fn_disable_logs()
 	logs_svc_promise.then(
 		function(svc)
 		{
-			svc['devapt-subscribe'].unsubscribes.forEach(
-				function(unsubscribe)
-				{
-					unsubscribe()
-				}
-			)
+			if ( Array.isArray(svc['devapt-subscription'].unsubscribes) )
+			{
+				svc['devapt-subscription'].unsubscribes.forEach(
+					function(unsubscribe)
+					{
+						unsubscribe()
+					}
+				)
+			}
 		}
 	)
 	logs_are_enabled = false

@@ -1,0 +1,57 @@
+{
+	"is_master":true,
+	"name":"NodeAOpenshift",
+	
+	"master":{
+		"name":"NodeAOpenshift",
+		
+		"msg_bus":{
+			"package":"socketio",
+			"protocole":"ws",
+			"type":"Server",
+			"host":"testbus-lbo.rhcloud.com",
+			"port":5000
+		},
+		"logs_bus":{
+			"package":"socketio",
+			"protocole":"ws",
+			"type":"Server",
+			"host":"testbus-lbo.rhcloud.com",
+			"port":5001
+		},
+		"metrics_bus":{
+			"package":"socketio",
+			"protocole":"ws",
+			"type":"Server",
+			"host":"testbus-lbo.rhcloud.com",
+			"port":5002
+		}
+	},
+	
+	"settings_provider": {
+		"source":"local_file",
+		"relative_path":"world.json"
+	},
+	
+	"trace": {
+		"stages":{
+			"enabled":true,
+			
+			"RuntimeStage0":{
+				"enabled":false
+			},
+			
+			"RuntimeStage1":{
+				"enabled":false
+			},
+			
+			"RuntimeStage2":{
+				"enabled":false
+			},
+			
+			"RuntimeStage3":{
+				"enabled":false
+			}
+		}
+	}
+}

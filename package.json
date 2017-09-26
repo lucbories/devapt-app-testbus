@@ -24,6 +24,7 @@
     "dist": "./dist"
   },
   "scripts": {
+    "start": "node node_modules/devapt-core-server/dist/js/start_node.js -n NodeAOpenshift -t dist/resources/world -b node_modules/devapt-core-server/dist/js -s NodeAOpenshift:NodeAOpenshift8081",
     "nodeA": "node node_modules/devapt-core-server/dist/js/start_node.js -n NodeA -t dist/resources/world -b node_modules/devapt-core-server/dist/js -s NodeA:NodeALocal8081",
     "nodeB": "node node_modules/devapt-core-server/dist/js/start_node.js -n NodeB -t dist/resources/world -b node_modules/devapt-core-server/dist/js -s NodeB:NodeBLocal8082",
     "nodeC": "node node_modules/devapt-core-server/dist/js/start_node.js -n NodeC -t dist/resources/world -b node_modules/devapt-core-server/dist/js -s NodeC:NodeCLocal8083"
