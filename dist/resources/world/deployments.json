@@ -4,14 +4,14 @@
 			"assets":{
 				"assets":{},
 				"services":{
-					"topology":{ "servers":["NodeAOpenshift80", "NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
-					"html_assets":{ "servers":["NodeAOpenshift80", "NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
-					"pingpong":{ "servers":["NodeAOpenshift80", "NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
-					"logs":{ "servers":["NodeAOpenshift80", "NodeALocal8080"], "filters":["*"] },
-					"messaging":{ "servers":["NodeAOpenshift80", "NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
-					"metrics":{ "servers":["NodeAOpenshift80", "NodeALocal8080"], "filters":["*"] },
-					"middlewares":{ "servers":["NodeAOpenshift80", "NodeALocal8080"], "filters":["*"] },
-					"resources":{ "servers":["NodeAOpenshift80", "NodeALocal8080"], "filters":["*"] }
+					"topology":{ "servers":["NodeAOpenshift8080", "NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
+					"html_assets":{ "servers":["NodeAOpenshift8080", "NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
+					"pingpong":{ "servers":["NodeAOpenshift8080", "NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
+					"logs":{ "servers":["NodeAOpenshift8080", "NodeALocal8080"], "filters":["*"] },
+					"messaging":{ "servers":["NodeAOpenshift8080", "NodeALocal8080", "NodeBLocal7080", "NodeCLocal6080"], "filters":["*"] },
+					"metrics":{ "servers":["NodeAOpenshift8080", "NodeALocal8080"], "filters":["*"] },
+					"middlewares":{ "servers":["NodeAOpenshift8080", "NodeALocal8080"], "filters":["*"] },
+					"resources":{ "servers":["NodeAOpenshift8080", "NodeALocal8080"], "filters":["*"] }
 				}
 			}
 		}

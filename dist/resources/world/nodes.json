@@ -4,9 +4,9 @@
 			"host":"testbus-lbo.rhcloud.com",
 			"is_master":true,
 			"servers":{
-				"NodeAOpenshift80":{
+				"NodeAOpenshift8080":{
 					"type":"express",
-					"port":80,
+					"port":8080,
 					"protocole":"http",
 					"middlewares":[],
 					"use_socketio":true,
