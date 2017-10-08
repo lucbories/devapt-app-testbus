@@ -34,13 +34,13 @@
 						{
 							"is_global":true,
 							"route":"/|/.*.html",
-							"directory":"../../public/assets/html",
+							"directory":"../../../../../public/assets/html",
 							"default":"index.html"
 						},
 
 						{
 							"route":"/",
-							"directory":"../../public/assets/",
+							"directory":"../../../../../public/assets/",
 							"required_prefixes":[],
 							"required_suffixes":[".js", ".js.map", ".css", ".html", ".png", ".jpg"]
 						}
