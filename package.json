@@ -41,10 +41,10 @@
     "devtools"
   ],
   "dependencies": {
-    "devapt-core-browser": ">=2.0.0",
-    "devapt-core-common": ">=2.0.0",
-    "devapt-core-server": ">=2.0.0",
-    "devapt-core-services": ">=2.0.0"
+    "devapt-core-browser": "^2.0.4",
+    "devapt-core-common": "^2.0.4",
+    "devapt-core-server": "^2.0.3",
+    "devapt-core-services": "^2.0.3"
   },
   "devDependencies": {
     "del": ">=2.2.0",
